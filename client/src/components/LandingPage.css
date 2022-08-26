@@ -1,0 +1,9 @@
+.LandingPage{
+    background: url("https://www.lasrecetasfacilesdemaria.com/wp-content/uploads/2017/12/Imagen-4.jpg") no-repeat 50% 50%;
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 200px 100px;
+    border-radius: 20px;
+}

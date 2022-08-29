@@ -5,22 +5,23 @@ const express = require('express');
 const { API_KEY }= process.env;
 const router = express();
 const {Recipe, Dieta} = require("../db")
+const {dietTypes} = require ("../controllers/dietTypes.js")
 
 router.get("/", async (req, res) => {
 
-    const dietsApi = await axios(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`);
-    const diets = dietsApi.data.results.map(e => e.diets)
-    console.log(diets)
-    const dietsEach = diets.forEach(e => {
-        for (let i = 0; i < e.length ; i++) 
-        Dieta.findOrCreate({
+    try{
+    dietTypes.forEach(async e => {
+    await Dieta.findOrCreate({
             where: {
-                dietName: e[i]
+                dietName: e
             }
         })
     })
     const allDiets = await Dieta.findAll();
-    res.status(200).send(allDiets);
+    res.send(allDiets);
+    }catch(error){
+        next(error);
+    }
 });
 
 module.exports = router;

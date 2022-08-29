@@ -12,6 +12,7 @@ router.post("/", async (req, res)=> {
         healthScore,
         stepByStep,
         createdInDb,
+        
     })
     let dietDb = await Dieta.findAll({
         where: { dietName : diet}
@@ -20,5 +21,6 @@ router.post("/", async (req, res)=> {
     newRecipe.addDieta(dietDb)
     res.status(200).send(newRecipe);
 })
+
 
 module.exports = router;

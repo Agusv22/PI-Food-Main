@@ -1,0 +1,37 @@
+.container{
+    display: flex;
+    align-items: center;
+    margin: 30px;
+    height: 500px;
+}
+
+.container .card{
+    width: 360px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(148, 146, 146, 0.699) 0%, rgb(181, 215, 253) 100%);
+    box-shadow: 0 12px 16px;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.20s;
+    border-radius: 20px;
+}
+
+.container .card img{
+    height: 200px;
+    width: 200px;
+}
+
+.container .card h3{
+    font-size: medium;
+    font-weight: 200px;
+    color: black;
+}
+
+.container .card h5{
+    font-size: small;
+    font-weight: 200px;
+    color: black;
+    letter-spacing: 0.1em;
+}
+
+

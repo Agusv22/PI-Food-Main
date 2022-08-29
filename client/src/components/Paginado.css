@@ -1,0 +1,35 @@
+.paginado{
+    margin: 20px 0px;
+}
+
+.paginado ul{
+    text-align: center;
+    list-style: none;
+}
+
+.paginado ul li{
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.paginado ul li a{
+    display: block;
+    padding: 10px 16px;
+    color: aliceblue;
+    background: black;
+    text-decoration: none;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1.1;
+
+}
+
+.paginado ul li a:hover{
+background: gray;
+}
+
+.paginado ul li .active{
+    background: gray;
+}

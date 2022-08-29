@@ -13,13 +13,12 @@ const getApiInfo = async () => {
             title: e.title,
             img: e.image,
             resumenPlato: e.summary,
-            dietTypes: e.diets,
+            dietName: e.diets,
             healthScore: e.healthScore,
             stepByStep: e.analyzedInstructions[0]?.steps.map(e => {
-                return {
-                    number: e.number,
-                    step: e.step
-                 }
+                return (
+                    e.step
+                )
             })
         }
     })

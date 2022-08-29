@@ -1,0 +1,22 @@
+body{
+    background-image: url("../assets/food-prueba4.png");
+    max-width: 100%;
+    max-width: 100%;
+    background-size: cover;
+}
+
+
+.cartita{
+    grid-column: 1/-1;
+    grid-row: 7-1;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    gap: 0rem;
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+}
+

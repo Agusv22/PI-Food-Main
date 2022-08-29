@@ -1,9 +1,57 @@
+html {
+    height: 100%;
+}
+
+html body {
+    height: 100%;
+}
+
+html body #root{
+    height: 100%;
+}
+
+html body #root .App{
+    height: 100%;
+}
+
 .LandingPage{
-    background: url("https://www.lasrecetasfacilesdemaria.com/wp-content/uploads/2017/12/Imagen-4.jpg") no-repeat 50% 50%;
-    text-align: center;
-    display: block;
+    overflow: hidden;
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 200px 100px;
-    border-radius: 20px;
+    height: 100vh;
+    width: 100vw;
+    background: #000;
 }
+
+.LandingPage .landingImage {
+    object-fit: cover;
+}
+
+.LandingPage .titulo1{
+position: absolute;
+/*max-width: 20px; */
+margin-left: 30px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+color:darksalmon;
+}
+
+.boton1{
+    --c1: #d4b54d;
+    --c2: #fda085;
+    padding: 20px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background: linear-gradient(90deg, var(--c1, #dbac0f), var(--c2, #f08162) 51%, var(--c1, #f6d365)) var(--x, 0)/ 200%;
+    color: rgb(10, 1, 1);
+    border-radius: 20px;
+    outline: none;
+   }
+   
+   button:hover {
+    --x: 100%;
+   }

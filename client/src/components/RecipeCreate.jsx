@@ -13,9 +13,9 @@ export default function RecipeCreate(){
 
     const [input, setInput]= useState({
         title: "",
-        summary: "",
+        resumenPlato: "",
         healthScore: '',
-        stepFromDb: "",
+        stepByStep: "",
         img: "",
         diet: [],
     })
@@ -44,9 +44,9 @@ export default function RecipeCreate(){
             alert("Receta creada!!")
             setInput({
             title: "",
-            summary: "",
+            resumenPlato: "",
             healthScore: '',
-            stepFromDb: "",
+            stepByStep: "",
             img: "",
             diet: []
             })
@@ -63,28 +63,28 @@ export default function RecipeCreate(){
      //Necesito renderizar las dietas
      useEffect(() => {
         dispatch(getDiets());
-    }, []);
+    }, [dispatch]);
 
     return (
         <div>
             <Link to= "/Home"><button>Atrás</button></Link>
             <h1>Creá tu RECETA!</h1>
-            <form>
+            <form onSubmit={(e) => handleSubmit(e)}>
                 <div>
                 <label>Title:</label>
                 <input
                 type= "text"
                 value={input.title}
                 name="title"
-                onChange={(e) => handleSubmit(e)}
+                onChange={(e) => handleChange(e)}
                 />
                 </div>
                 <div>
                 <label>Summary:</label>
                 <input
                 type="text"
-                value={input.summary}
-                name="summary"
+                value={input.resumenPlato}
+                name="resumenPlato"
                 onChange={(e) => handleChange(e)}
                 />
                 </div>
@@ -109,17 +109,16 @@ export default function RecipeCreate(){
                 <label>Steps</label>
                 <input
                 type="text"
-                value={input.stepFromDb}
-                name="stepFromDb"
+                value={input.stepByStep}
+                name="stepByStep"
                 onChange={(e) => handleChange(e)}
                 />
             </div>
             <select onChange={(e) => handleSelect(e)}>
                 {diets.map((e) => (
-                    <option value={e.dietName}>{e.dietName}</option>
+                    <option value={e}>{e}</option>
                 ))}
             </select>
-            <ul><li>{input.diet.map(e => e + "  -")}</li></ul>
             <button type ="submit">Crear Receta</button>
             </div>
             </form>

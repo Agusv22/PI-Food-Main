@@ -6,6 +6,8 @@ import { getRecipes, filterByDiets, orderByTitle, orderByHealthScore } from "../
 import Card from "./Card";
 import Paginado from "./Paginado";
 import SearchBar from "./SearchBar";
+import "./Home.css";
+import fotoreceta from "../assets/recetas.jpg"
 
 //useEffect actualiza cuando algo sucede
 export default function Home(){
@@ -70,6 +72,8 @@ export default function Home(){
 
     return (
         <div>
+            <img src={fotoreceta} width="50px" height="50px"/>
+        
         <Link to= "/recetas"> Crear Recetas</Link>
         <h1> Las mejores recetas</h1>
         <button onClick = {e => {handleClick(e)}}>
@@ -104,13 +108,15 @@ export default function Home(){
             paginado = {paginado}
             />
             <SearchBar/>
+            <div className="cartita">
             {currentRecipes?.map(e => {
                 return (
                 <fragment>
-                <Card title={e.title} image={e.img? e.img : e.image} dietType={e.dietType} key={e.id}/>
+                <Card title={e.title} image={e.img? e.img : e.image} dietType={e.dietName? e.dietName : e.dieta?.map(e => {return (<div>{e.dietName}</div>)})} key={e.id} id={e.id}/>
                 </fragment>
                 );
                })}
+        </div>
         </div>
         </div>
     )

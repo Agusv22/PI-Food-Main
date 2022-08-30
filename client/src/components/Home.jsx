@@ -76,21 +76,21 @@ export default function Home(){
         <div>
             <img src={fotoreceta} width="50px" height="50px"/>
         
-        <Link to= "/recetas"> Crear Recetas</Link>
-        <h1>Las mejores recetas</h1>
-        <button onClick = {e => {handleClick(e)}}>
-            Volver a cargar todas las recetas
+        <Link to= "/recetas"><div className="botonreceta"> Create Recipe </div></Link>
+        <h1 className="titulohome">The Best Recipes!!</h1>
+        <button className="cargar" onClick = {e => {handleClick(e)}}>
+            Refresh Recipes!
         </button>
-        <div>
-            <select onChange={e => handleSortTitle(e)}>
+        <div className="nombresito1">
+            <select className="ordenar" onChange={e => handleSortTitle(e)}>
                 <option value="ascendente">A - Z</option>
                 <option value="descendente">Z - A</option>
             </select>
-            <select onChange={e => handleSortHealthScore(e)}>
+            <select className="calorias" onChange={e => handleSortHealthScore(e)}>
                 <option value= "mostHS">Most HealthScore</option>
                 <option value= "lessHS">Less HealthScore</option>
             </select>
-                <select onChange={e => {handleFiltersDiets(e)}}>
+                <select className="tiposdedieta" onChange={e => {handleFiltersDiets(e)}}>
                 <option value="All">All</option>
                 <option value="gluten free">Gluten Free</option>
                 <option value="ketogenic">Ketogenic</option>

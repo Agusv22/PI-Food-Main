@@ -34,4 +34,16 @@
     letter-spacing: 0.1em;
 }
 
+.tiposss{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.tiposss li{
+    width: fit-content;
+    font-weight: bold;
+    
+    text-align: left;
+}
 

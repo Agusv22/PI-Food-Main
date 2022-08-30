@@ -20,3 +20,89 @@ body{
     text-decoration: none;
 }
 
+.cargar{
+    cursor: pointer;
+    background: radial-gradient(circle, rgba(148, 146, 146, 0.699) 0%, rgb(181, 215, 253) 100%);
+    width: 150px;
+    height: 30px;
+    font-size: medium;
+    margin-right: 10px ;
+}
+
+.ordenar{
+cursor: pointer;
+background: radial-gradient(circle, rgba(148, 146, 146, 0.699) 0%, rgb(181, 215, 253) 100%);
+width: fit-content;
+height: 20px;
+margin: 0 10px 0 10px;
+padding: 0 10px 0 10px;
+
+}
+
+.calorias{
+cursor: pointer;
+background: radial-gradient(circle, rgba(148, 146, 146, 0.699) 0%, rgb(181, 215, 253) 100%);
+width: fit-content;
+font-size: medium;
+margin: 0 20px 0 10px;
+padding: 0 20px 0 10px;
+
+}
+
+.tiposdedieta{
+cursor: pointer;
+background: radial-gradient(circle, rgba(148, 146, 146, 0.699) 0%, rgb(181, 215, 253) 100%);
+width: fit-content;
+height: 20px;
+font-size: medium;
+
+}
+.titulohome{
+cursor: pointer;
+background: radial-gradient(circle, rgba(148, 146, 146, 0.699) 0%, rgb(181, 215, 253) 100%);
+ width: fit-content;
+ margin-left: 500px;
+}
+
+.botonreceta{
+    cursor: pointer;
+  font-weight: 700;
+  font-family: Helvetica,"sans-serif";
+  transition: all .2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #74aefa;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  width: fit-content;
+  margin-left: 560px;
+  text-decoration: none;
+
+}
+
+.botonreceta:hover {
+  background: #dae7f5;
+}
+
+.botonreceta > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform .3s ease-in-out;
+}
+
+.botonreceta:hover svg {
+  transform: translateX(5px);
+}
+
+.botonreceta:active {
+  transform: scale(0.95);
+}
+
+.nombresito1{
+  margin: 1rem auto;
+  
+}
+
+

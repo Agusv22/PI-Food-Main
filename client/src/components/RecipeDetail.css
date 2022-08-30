@@ -1,6 +1,4 @@
 
-
-
 .cardsita{
 width: 900px;
 height:max-content ;
@@ -11,7 +9,7 @@ border-radius: 20px;
 display: inline-block;
 text-align: center;
 align-items: center;
-overflow: scroll;
+overflow: auto;
 flex-direction: row;
 
 }

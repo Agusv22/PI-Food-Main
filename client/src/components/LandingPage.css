@@ -40,6 +40,7 @@ color:darksalmon;
 }
 
 .boton1{
+    cursor: pointer;
     --c1: #d4b54d;
     --c2: #fda085;
     padding: 20px 30px;

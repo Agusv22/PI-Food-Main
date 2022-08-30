@@ -35,7 +35,8 @@ export default function Detail(props) {
         Diet Type:{" "}
         {myRecipe?.dietName
           ? myRecipe?.dietName?.map((e) => {
-              return <div>{e}</div>;
+              return <div>{e}</div>
+          
             })
           : myRecipe?.dieta?.map((d) => {
               return <div>{d.dietName}</div>;

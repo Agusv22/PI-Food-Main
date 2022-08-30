@@ -3,7 +3,7 @@ import { useState } from "react";
 import { dispatch, useDispatch } from "react-redux";
 import { getRecipesByTitle } from "../actions";
 
-export default function SearchBar(){
+export default function SearchBar({setCurrentPage}){
     const dispatch = useDispatch();
     const [title, setTitle] = useState("");
 
@@ -16,7 +16,9 @@ export default function SearchBar(){
     function handleSubmit(e){
         e.preventDefault()
         dispatch(getRecipesByTitle(title)) 
+        setCurrentPage(1)
         setTitle("");
+    
     }
 
     return (
@@ -24,6 +26,7 @@ export default function SearchBar(){
             <input
             type= "text"
             placeholder= "Buscar.."
+            value ={title}
             onChange={(e) => handleInputChange(e)}
             />
             <button type="submit" onClick={(e) => handleSubmit(e)}>Buscar</button>

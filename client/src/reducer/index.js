@@ -16,17 +16,23 @@ switch(action.type) {
         }
         case "FILTER_BY_DIETS": 
             const allRecipes = state.allRecipes;
+            console.log(allRecipes)
             function dietas(){
                 let prueba1 =[]
                 for (const key in allRecipes) {
-                    allRecipes[key].dietTypes.map(e => {
+                    allRecipes[key].dietName?.map(e => {
                         if(e === action.payload) {
                             prueba1.push(allRecipes[key])
                         }
                     })
-                } 
+                    allRecipes[key].dieta?.map(d=>{
+                        if(d.dietName === action.payload)
+                        prueba1.push(allRecipes[key])
+                    })
+                    }  
                 return prueba1
                 }
+
             const statusFiltered = action.payload === "All" ? allRecipes : dietas()
             return {
                 ...state,
@@ -101,9 +107,17 @@ switch(action.type) {
                     ...state,
                     recipesDetail: action.payload
                 }
+
+        case "RELOAD":
+            return{
+                ...state,
+                recipesDetail: action.payload
+            }
         default: return state;
     }
 }
+
+
 
 
 

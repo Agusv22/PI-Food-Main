@@ -47,6 +47,7 @@ export default function Home(){
     function handleClick(e){
         e.preventDefault();
         dispatch(getRecipes())
+        setCurrentPage(1);
     }
 
     function handleFiltersDiets(e){
@@ -75,18 +76,18 @@ export default function Home(){
             <img src={fotoreceta} width="50px" height="50px"/>
         
         <Link to= "/recetas"> Crear Recetas</Link>
-        <h1> Las mejores recetas</h1>
+        <h1>Las mejores recetas</h1>
         <button onClick = {e => {handleClick(e)}}>
             Volver a cargar todas las recetas
         </button>
         <div>
             <select onChange={e => handleSortTitle(e)}>
-                <option value="Asc">A - Z</option>
-                <option value="Desc">Z - A</option>
+                <option value="ascendente">A - Z</option>
+                <option value="descendente">Z - A</option>
             </select>
             <select onChange={e => handleSortHealthScore(e)}>
-                <option value= "MostHS">Most HealthScore</option>
-                <option value= "LessHS">Less HealthScore</option>
+                <option value= "mostHS">Most HealthScore</option>
+                <option value= "lessHS">Less HealthScore</option>
             </select>
                 <select onChange={e => {handleFiltersDiets(e)}}>
                 <option value="All">All</option>
@@ -101,13 +102,15 @@ export default function Home(){
                 <option value="fodmap friendly">Fodmap friendly</option>
                 <option value="low fodmap">Low Fodmap</option>
                 <option value="whole 30">Whole 30</option>
+                <option value="vegetarian">Vegetarian</option>
+                
             </select>
             <Paginado
             recipesPerPage= {recipesPerPage}
             allRecipes={allRecipes.length}
             paginado = {paginado}
             />
-            <SearchBar/>
+            <SearchBar setCurrentPage={setCurrentPage}/>
             <div className="cartita">
             {currentRecipes?.map(e => {
                 return (

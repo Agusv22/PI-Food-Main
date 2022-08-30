@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getDetail } from "../actions";
+import { getDetail, reload } from "../actions";
 import { useEffect } from "react";
+import "./RecipeDetail.css"
 
 export default function Detail(props) {
   console.log(props);
@@ -10,13 +11,15 @@ export default function Detail(props) {
 
   useEffect(() => {
     dispatch(getDetail(props.match.params.id)); // asi accedo al id de ese detalle
+    dispatch(reload([])) // para que se vacie el get detail y vuelva a cargar el gif
   }, [dispatch]);
 
   const myRecipe = useSelector((state) => state.recipesDetail);
 
   console.log(myRecipe, "recipe");
   return (
-    <div>
+    <div> {myRecipe.length === 0 ? <div> <img src="https://www.menuelsharkia.com/static/images/loading-foods.gif" alt="img not found"/></div> :(
+      <div>
       <div>
         <img
           src={myRecipe?.img}
@@ -54,6 +57,8 @@ export default function Detail(props) {
       <Link to="/home">
         <button>Volver</button>
       </Link>
+      </div>
+)}
     </div>
   );
 }

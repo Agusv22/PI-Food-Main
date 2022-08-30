@@ -39,7 +39,7 @@ export function getRecipesByTitle(title){
 				payload: json.data
 			})
 		}catch (error) {
-			console.log(error);
+			alert("Receta no encontrada")
 		}
 	}
 }
@@ -82,4 +82,12 @@ export function getDetail(id){
 		}
 	}
 }
+
+export function reload(payload){
+	return {
+		type: "RELOAD",
+		payload: payload,
+	}
+}
+
 

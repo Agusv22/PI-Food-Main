@@ -3,7 +3,7 @@ const { DataTypes } = require('sequelize');
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
-  //UUID: genera letras y numeros random que no se va a repetir para que los id de database no choque con el id de las api y no se sobreescriba
+  //UUID: genera numeros random que no se va a repetir para que los id de database no choque con el id de las api y no se sobreescriba
   sequelize.define('recipe', {
     id:{
       type: DataTypes.UUID,

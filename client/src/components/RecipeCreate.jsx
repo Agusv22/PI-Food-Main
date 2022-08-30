@@ -39,9 +39,6 @@ export default function RecipeCreate() {
   
 
 }
-function reload(){
-window.location.href = window.location.href;
-}
 
   //cada vez que ejecutes esta funcion a mi estado input ademas de lo q tiene agregale el target value de lo que este modificando
   function handleChange(e) {
@@ -56,6 +53,8 @@ window.location.href = window.location.href;
   }
 
   function handleSelect(e) {
+    let { value } = e.target;
+        if(value && !input.diet.includes(value)){
     setInput({
       ...input,
       //Cada vez que haces un click en el select, se va concatenando en diet
@@ -63,6 +62,7 @@ window.location.href = window.location.href;
       diet: [...input.diet, e.target.value],
     });
   }
+}
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -84,15 +84,17 @@ window.location.href = window.location.href;
       diet: [],
     });
     history.push("/home");
-    reload()
   }
 }
 
   function handleDelete(e) {
+    let { value } = e.target;
+    if(value && input.diet.includes(value)){
     setInput({
       ...input,
-      diet: input.diet.filter((dieta) => dieta !== e),
+      diet: input.diet.filter((dieta) => dieta !== value),
     });
+  }
   }
 
   //Necesito renderizar las dietas
@@ -171,15 +173,19 @@ window.location.href = window.location.href;
           <button className="botoncito" type="submit">Crear Receta</button>
         
       </form>
+      <div className="pruebadivsito">
       {input.diet.map((e) => (
-        <div className="divsito">
-          <p>{e}</p>
-          <button className="BotonX" onClick={() => handleDelete(e)}>
+        <div className="label-selected anim-opacity">
+          <div className="selected-text">{e}</div>
+          <button className="selected-button" value={e} onClick={(e) => handleDelete(e)}>
             x
           </button>
         </div>
       ))}
+      </div>
     </div>
     </div>
   );
 }
+
+     

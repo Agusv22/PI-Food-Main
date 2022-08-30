@@ -40,6 +40,7 @@ export default function Home(){
 
 
     useEffect(() =>{
+    if(!allRecipes.length)
         dispatch(getRecipes());
     },[dispatch])
 

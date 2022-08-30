@@ -19,7 +19,7 @@ export default function Detail(props) {
   console.log(myRecipe, "recipe");
   return (
     <div> {myRecipe.length === 0 ? <div> <img src="https://www.menuelsharkia.com/static/images/loading-foods.gif" alt="img not found"/></div> :(
-      <div>
+      <div className="cardsita">
       <div>
         <img
           src={myRecipe?.img}
@@ -58,7 +58,9 @@ export default function Detail(props) {
         <button>Volver</button>
       </Link>
       </div>
+      
 )}
     </div>
   );
+
 }

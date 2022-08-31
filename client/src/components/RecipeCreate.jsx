@@ -25,19 +25,23 @@ export default function RecipeCreate() {
     let errors = {};
     if (!/^[A-Z]+$/i.test(input.title)) {
         errors.title = "Insertar un titulo para la receta";
+    }else if(input.title.length > 20){
+      errors.title = "Inserte un titulo menor a 20 caracteres";
+
     }else if(!input.resumenPlato){
-        errors.resumenPlato = "Redactar un resumen para la receta"
-    }else if(input.healthScore < 0 || input.healthScore > 100 || !input.healthScore){
-        errors.healthScore = "Declarar un valor entre 0 y 100"
+        errors.resumenPlato = "Redactar un resumen para la receta";
+
+    }else if(input.healthScore < 0 || input.healthScore > 100 || !input.healthScore || (!/^[0-9]+$/.test(input.healthScore))){
+        errors.healthScore = "Declarar un valor entero entre 0 y 100";
+
     }else if(!input.stepByStep){
-        errors.stepByStep = "Redactar los pasos a seguir!"
+        errors.stepByStep = "Redactar los pasos a seguir!";
+
     }else if (!input.img.length > 0 || !input.img.match(/^(ftp|http|https):\/\/[^ "]+$/)){
         errors.img = "Inserte una Dirección de imágen"
     }
     return errors
   
-  
-
 }
 
   //cada vez que ejecutes esta funcion a mi estado input ademas de lo q tiene agregale el target value de lo que este modificando

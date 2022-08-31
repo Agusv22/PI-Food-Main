@@ -8,7 +8,7 @@ overflow: scroll;
 .cartita1{
 width: 300px;
 height: 525px;
-background: radial-gradient(circle, rgba(148, 146, 146, 0.699) 0%, rgb(181, 215, 253) 100%);
+background: radial-gradient(circle, rgba(226, 226, 226, 0.699) 0%, rgb(250, 224, 189) 100%);
 box-shadow: 0 12px 16px;
 overflow: hidden;
 text-align: center;
@@ -25,18 +25,19 @@ box-shadow: 20px 20px 20px 20px rgba(157,189,235, 0.545);
 }
 
 .botoncito{
+    cursor: pointer;
     font-size: 17px;
     padding: 0.5em 2em;
     border: transparent;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-    background: rgb(85, 169, 252);
-    color: white;
+    background: rgb(248, 207, 96);
+    color: black;
     border-radius: 4px;
    }
    
    .botoncito:hover {
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(30,144,255,1) 0%, rgb(69, 160, 245) 100%);
+    background: linear-gradient(90deg, rgba(243, 191, 49, 0.699) 0%, rgb(247, 146, 14) 100%);
    }
    
    .botoncito:active {
@@ -74,8 +75,8 @@ box-shadow: 20px 20px 20px 20px rgba(157,189,235, 0.545);
     padding: 2px 6px;
     padding-top: 6px;
     border-radius: 10px 0 0 10px;
-    border: 2px solid rgba(58, 104, 231, 0.469);
-    background-color: rgba(52, 153, 248, 0.486);
+    border: 2px rgba(2, 2, 1, 0.469);
+    background-color: rgba(128, 250, 91, 0.486);
     color: rgba(22, 2, 2, 0.926);
     border-right: 0;
 }
@@ -90,7 +91,7 @@ box-shadow: 20px 20px 20px 20px rgba(157,189,235, 0.545);
     background-color: rgba(252, 102, 122, 0.789);
     border-radius: 0 10px 10px 0;
     border: 2px solid rgba(122, 18, 18, 0.418);
-    color: rgba(6, 28, 54, 0.926);
+    color: rgba(54, 35, 6, 0.926);
 }
 
 .selected-button:hover {

@@ -22,7 +22,7 @@ body{
 
 .cargar{
     cursor: pointer;
-    background: radial-gradient(circle, rgba(148, 146, 146, 0.699) 0%, rgb(181, 215, 253) 100%);
+    background: radial-gradient(circle, rgba(226, 226, 226, 0.699) 0%, rgb(250, 224, 189) 100%);
     width: 150px;
     height: 30px;
     font-size: medium;
@@ -31,7 +31,7 @@ body{
 
 .ordenar{
 cursor: pointer;
-background: radial-gradient(circle, rgba(148, 146, 146, 0.699) 0%, rgb(181, 215, 253) 100%);
+background: radial-gradient(circle, rgba(226, 226, 226, 0.699) 0%, rgb(250, 224, 189) 100%);
 width: fit-content;
 height: 20px;
 margin: 0 10px 0 10px;
@@ -41,7 +41,7 @@ padding: 0 10px 0 10px;
 
 .calorias{
 cursor: pointer;
-background: radial-gradient(circle, rgba(148, 146, 146, 0.699) 0%, rgb(181, 215, 253) 100%);
+background: radial-gradient(circle, rgba(226, 226, 226, 0.699) 0%, rgb(250, 224, 189) 100%);
 width: fit-content;
 font-size: medium;
 margin: 0 20px 0 10px;
@@ -51,15 +51,14 @@ padding: 0 20px 0 10px;
 
 .tiposdedieta{
 cursor: pointer;
-background: radial-gradient(circle, rgba(148, 146, 146, 0.699) 0%, rgb(181, 215, 253) 100%);
+background: radial-gradient(circle, rgba(226, 226, 226, 0.699) 0%, rgb(250, 224, 189) 100%);
 width: fit-content;
 height: 20px;
 font-size: medium;
 
 }
 .titulohome{
-cursor: pointer;
-background: radial-gradient(circle, rgba(148, 146, 146, 0.699) 0%, rgb(181, 215, 253) 100%);
+background: radial-gradient(circle, rgba(226, 226, 226, 0.699) 0%, rgb(250, 224, 189) 100%);
  width: fit-content;
  margin-left: 500px;
 }
@@ -71,7 +70,7 @@ background: radial-gradient(circle, rgba(148, 146, 146, 0.699) 0%, rgb(181, 215,
   transition: all .2s;
   padding: 10px 20px;
   border-radius: 100px;
-  background: #74aefa;
+  background: #f5e19f;
   border: 1px solid transparent;
   display: flex;
   align-items: center;
@@ -83,7 +82,7 @@ background: radial-gradient(circle, rgba(148, 146, 146, 0.699) 0%, rgb(181, 215,
 }
 
 .botonreceta:hover {
-  background: #dae7f5;
+  background: #f7bf08;
 }
 
 .botonreceta > svg {

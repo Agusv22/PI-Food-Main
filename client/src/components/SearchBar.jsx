@@ -26,7 +26,7 @@ export default function SearchBar({setCurrentPage}){
         <div className="busqueda">
             <input
             type= "text"
-            placeholder= "Search.."
+            placeholder= "Search Recipes..."
             value ={title}
             onChange={(e) => handleInputChange(e)}
             />

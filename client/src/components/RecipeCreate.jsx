@@ -109,13 +109,13 @@ export default function RecipeCreate() {
   return (
     <div className="container2">
       <Link to="/Home">
-        <button>Atrás</button>
+        <button className="volverboton1">Atrás</button>
       </Link>
       <h1>Creá tu RECETA!</h1>
       <div className="cartita1">
       <form className="cssform" onSubmit={(e) => handleSubmit(e)}>
         <div>
-          <label>Title:</label>
+          <label className="cuadraditos">Title:</label>
           <input
             type="text"
             value={input.title}
@@ -123,10 +123,10 @@ export default function RecipeCreate() {
             onChange={(e) => handleChange(e)}
           />
           {errors.title&& (
-          <p>{errors.title}</p>)}
+          <p className="error" >{errors.title}</p>)}
         </div>
         <div>
-          <label>Summary:</label>
+          <label className="cuadraditos">Summary:</label>
           <input
             type="text"
             value={input.resumenPlato}
@@ -134,10 +134,10 @@ export default function RecipeCreate() {
             onChange={(e) => handleChange(e)}
           />
           {errors.resumenPlato&& (
-          <p>{errors.resumenPlato}</p>)}
+          <p className="error">{errors.resumenPlato}</p>)}
         </div>
         <div>
-          <label>Health Score:</label>
+          <label className="cuadraditos">Health Score:</label>
           <input
             type="number"
             value={input.healthScore}
@@ -145,10 +145,10 @@ export default function RecipeCreate() {
             onChange={(e) => handleChange(e)}
           />
           {errors.healthScore&& (
-          <p>{errors.healthScore}</p>)}
+          <p className="error">{errors.healthScore}</p>)}
         </div>
         <div>
-          <label>Img:</label>
+          <label className="cuadraditos">Img:</label>
           <input
             type="text"
             value={input.img}
@@ -156,10 +156,10 @@ export default function RecipeCreate() {
             onChange={(e) => handleChange(e)}
           />
           {errors.img&& (
-          <p>{errors.img}</p>)}
+          <p className="error">{errors.img}</p>)}
         </div>
         <div>
-            <label>Steps</label>
+            <label className="cuadraditos">Steps</label>
             <input
               type="text"
               value={input.stepByStep}
@@ -167,7 +167,7 @@ export default function RecipeCreate() {
               onChange={(e) => handleChange(e)}
             />
             {errors.stepByStep&& (
-            <p>{errors.stepByStep}</p>)}
+            <p className="error">{errors.stepByStep}</p>)}
           </div>
           <select onChange={(e) => handleSelect(e)}>
             {diets.map((e) => (

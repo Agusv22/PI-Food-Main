@@ -31,6 +31,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    //Separamos lo recibido de la API de lo creado en la BD
     createdInDb: {
       type: DataTypes.STRING,
       allowNull: false,

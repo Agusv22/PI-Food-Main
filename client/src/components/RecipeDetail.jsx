@@ -20,6 +20,12 @@ export default function Detail(props) {
   return (
     <div> {myRecipe.length === 0 ? <div> <img src="https://www.menuelsharkia.com/static/images/loading-foods.gif" alt="img not found"/></div> :(
       <div className="cardsita">
+      <Link to="/home">
+          <button className="volverboton">Volver</button>
+      </Link>
+      <div>
+      <h2>HealthScore: {myRecipe?.healthScore}</h2>
+      </div>
       <div>
         <img
           src={myRecipe?.img}
@@ -49,17 +55,9 @@ export default function Detail(props) {
             __html: myRecipe.resumenPlato,
           }}
         />
-      </div>
-      <h2>HealthScore: {myRecipe?.healthScore}</h2>
-      <div>
         <h3>Step: {myRecipe?.stepByStep || "not found"}</h3>
       </div>
-
-      <Link to="/home">
-        <button>Volver</button>
-      </Link>
       </div>
-      
 )}
     </div>
   );

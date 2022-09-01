@@ -64,7 +64,7 @@ background: radial-gradient(circle, rgba(226, 226, 226, 0.699) 0%, rgb(250, 224,
 }
 
 .botonreceta{
-    cursor: pointer;
+  cursor: pointer;
   font-weight: 700;
   font-family: Helvetica,"sans-serif";
   transition: all .2s;

@@ -75,7 +75,6 @@ export default function Home(){
     return (
         <div>
             <img src={fotoreceta} width="50px" height="50px"/>
-        
         <Link to= "/recetas"><div className="botonreceta"> Create Recipe </div></Link>
         <h1 className="titulohome">The Best Recipes!!</h1>
         <button className="cargar" onClick = {e => {handleClick(e)}}>

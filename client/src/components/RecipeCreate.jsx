@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { postRecipe, getDiets } from "../actions/index";
+import { postRecipe, getDiets, reload } from "../actions/index";
 import { Link, useHistory } from "react-router-dom";
 import "./RecipeCreate.css";
 //useHistory es un metodo del router que lo que hace es redirigirme a la ruta que yo le diga
@@ -18,13 +18,15 @@ export default function RecipeCreate() {
     healthScore: "",
     stepByStep: "",
     img: "",
-    diet: [],
+    diet: []
   });
 
   function validate(input){
     let errors = {};
-    if (!/^[A-Z]+$/i.test(input.title)) {
-        errors.title = "Insertar un titulo para la receta";
+    if (!/^[a-zA-Z\s]*$/.test(input.title)) {
+      errors.title = "Solo puede ingresar letras y espacios";
+    }else if (!input.title){
+      errors.title = "Inserte un Titulo";
     }else if(input.title.length > 20){
       errors.title = "Inserte un titulo menor a 20 caracteres";
 
@@ -42,6 +44,9 @@ export default function RecipeCreate() {
     }
     return errors
   
+}
+function reload() {
+  window.location.href = window.location.href;
 }
 
   //cada vez que ejecutes esta funcion a mi estado input ademas de lo q tiene agregale el target value de lo que este modificando
@@ -85,9 +90,10 @@ export default function RecipeCreate() {
       healthScore: "",
       stepByStep: "",
       img: "",
-      diet: [],
+      diet: []
     });
     history.push("/home");
+    reload()
   }
 }
 
@@ -170,12 +176,12 @@ export default function RecipeCreate() {
             <p className="error">{errors.stepByStep}</p>)}
           </div>
           <select onChange={(e) => handleSelect(e)}>
+            <option value="selected" hidden>Select a Diet</option>
             {diets.map((e) => (
               <option value={e}>{e}</option>
             ))}
           </select>
           <button className="botoncito" type="submit">Crear Receta</button>
-        
       </form>
       <div className="pruebadivsito">
       {input.diet.map((e) => (

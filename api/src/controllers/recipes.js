@@ -37,18 +37,7 @@ const getDbInfo = async () => {
         }
     })
     return recipeDb
-    // return recipeDb.map(e => {
-    //     return{
-    //         id: e.id,
-    //         title: e.title,
-    //         img: e.img,
-    //         summary: e.resumenPlato,
-    //         healthScore: e.healthScore,
-    //         dietTypes: e.diets.map(e => e.dietName),
-    //         stepByStep: e.stepByStep,
-    //         createdInDb: e.createdInDb,
-    //     }
-    // })
+   
 };
 
 const getAllRecipes = async () => {

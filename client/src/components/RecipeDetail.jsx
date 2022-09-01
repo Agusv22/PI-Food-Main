@@ -58,6 +58,7 @@ export default function Detail(props) {
         <h3>Step: {myRecipe?.stepByStep || "not found"}</h3>
       </div>
       </div>
+      
 )}
     </div>
   );

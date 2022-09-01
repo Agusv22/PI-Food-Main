@@ -52,7 +52,7 @@ export default function Home(){
     }
 
     function handleFiltersDiets(e){
-        //Revisar
+        
         dispatch(filterByDiets(e.target.value));
         setCurrentPage(1);
     }
@@ -111,15 +111,17 @@ export default function Home(){
             paginado = {paginado}
             />
             <SearchBar setCurrentPage={setCurrentPage}/>
-            <div className="cartita">
+            { allRecipes.length === 0 ? <div> <img src="https://www.menuelsharkia.com/static/images/loading-foods.gif" alt="img not found"/></div> :
+                <div className="cartita">
             {currentRecipes?.map(e => {
                 return (
-                <fragment>
+                    <fragment>
                 <Card title={e.title} image={e.img? e.img : e.image} dietType={e.dietName? e.dietName : e.dieta?.map(e => {return (<div>{e.dietName}</div>)})} key={e.id} id={e.id}/>
                 </fragment>
                 );
-               })}
+            })}
         </div>
+        }
         </div>
         </div>
     )
